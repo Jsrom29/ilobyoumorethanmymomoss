@@ -1,21 +1,15 @@
-// Grab elements
-const yesButton = document.getElementById('yes-button');
-const noButton = document.getElementById('no-button');
-const popup = document.getElementById('popup');
-const closePopupButton = document.getElementById('close-popup');
-const popupGif = document.getElementById('popup-gif');
-
-// Open popup when "Yes" or "No" is clicked
-function showPopup() {
-    popup.style.display = 'flex'; // Show the pop-up
-}
-
-// Close the pop-up when the "I choose YES!" button is clicked
-closePopupButton.addEventListener('click', () => {
-    popup.style.display = 'none'; // Hide the pop-up
+document.getElementById('yes').addEventListener('click', function() {
+    alert('Yay! I’m so happy! 😍💖');
+    document.body.style.background = "linear-gradient(135deg, #ffafcc, #ff6f91)";
+    window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'; // Or any redirect link you'd like!
 });
 
-// Add event listeners for buttons
-yesButton.addEventListener('click', showPopup);
-noButton.addEventListener('click', showPopup);
+document.getElementById('no').addEventListener('click', function() {
+    document.getElementById('catGif').style.display = 'block';
+    document.getElementById('no').style.display = 'none';
+    alert('You’re breaking my heart! 😢 Please click YES!');
+    setTimeout(function() {
+        document.getElementById('no').style.display = 'inline-block';
+    }, 2000);
+});
 
