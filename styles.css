@@ -7,16 +7,18 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f8f0f9;
+    background: url('https://images.unsplash.com/photo-1573980451193-00d87c04f185') no-repeat center center fixed; /* Light marble texture */
+    background-size: cover; /* Ensure the background covers the whole page */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     text-align: center;
+    overflow: hidden;
 }
 
 .container {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.8); /* White background with slight transparency */
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -25,10 +27,9 @@ body {
 
 .title {
     font-size: 2.5em;
-    color: #f78f8f;
+    color: #4a90e2; /* Soft blue title */
     margin-bottom: 30px;
     font-family: 'Cursive', sans-serif;
-    animation: fadeIn 1s ease-in-out;
 }
 
 .button {
@@ -54,21 +55,36 @@ body {
     background-color: #ff7b8b;
 }
 
-.response {
-    font-size: 1.5em;
-    color: #ff5c8d;
-    font-weight: bold;
-    margin-top: 20px;
+/* Popup Styling */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+.popup-content {
+    background-color: #f78f8f; /* Pastel pink background for the pop-up */
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    animation: fadeInPopup 0.5s ease-in-out;
+}
+
+.popup-title {
+    font-size: 2em;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.popup-gif {
+    max-width: 100%;
+    border-radius: 10px;
 }
 
 @keyframes popIn {
@@ -79,5 +95,16 @@ body {
     to {
         transform: scale(1);
         opacity: 1;
+    }
+}
+
+@keyframes fadeInPopup {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
 }
