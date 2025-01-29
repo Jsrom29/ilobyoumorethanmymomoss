@@ -6,35 +6,42 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: #2c3e50; /* Dark background */
+    background: #2c3e50; /* Dark background color */
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    background: linear-gradient(135deg, #f8b9d2, #6c5ce7); /* Soft pastel pink marble-like gradient */
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite; /* Slow gradient animation */
 }
 
 .container {
     text-align: center;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+    border-radius: 20px;
     padding: 40px;
     position: relative;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.7);
+    max-width: 500px;
+    width: 100%;
+    animation: fadeIn 2s ease-in-out; /* Fade-in animation for the whole container */
 }
 
 h1 {
-    color: #ffafcc;
+    color: #ffafcc; /* Soft pastel pink */
     font-size: 3rem;
     margin-bottom: 20px;
     font-weight: bold;
-    animation: bounceIn 1s ease-out;
+    animation: bounceIn 1s ease-out; /* Bounce-in animation for heading */
 }
 
 p {
     color: #fff;
     font-size: 1.2rem;
     margin-bottom: 40px;
+    font-style: italic;
 }
 
 .buttons {
@@ -44,27 +51,30 @@ p {
 }
 
 .btn {
-    background-color: #ff6f91;
+    background-color: #ff6f91; /* Pastel pink color */
     color: #fff;
     padding: 15px 30px;
     border: none;
     font-size: 1.2rem;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    display: inline-block;
 }
 
 .btn:hover {
-    background-color: #ffafcc;
+    background-color: #ffafcc; /* Lighter pink on hover */
     transform: translateY(-5px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
 }
 
 #catGif img {
     width: 100%;
     max-width: 400px;
     margin-top: 20px;
-    animation: wiggle 2s ease-in-out infinite;
+    animation: wiggle 2s ease-in-out infinite; /* Wiggle animation for cat gifs */
 }
 
 .hidden {
@@ -76,6 +86,18 @@ p {
     font-size: 1.2rem;
     margin-top: 20px;
     animation: fadeIn 1s ease-in-out;
+    font-weight: bold;
+}
+
+#noResponse p {
+    font-size: 1.3rem;
+    color: #ffafcc; /* Soft pastel pink for text */
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 @keyframes bounceIn {
@@ -94,3 +116,4 @@ p {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
+
